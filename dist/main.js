@@ -110,13 +110,73 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/events/locationSubmit.js":
+/*!**************************************!*\
+  !*** ./src/events/locationSubmit.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   grabWeatherInfoOnSubmit: () => (/* binding */ grabWeatherInfoOnSubmit)\n/* harmony export */ });\n/* harmony import */ var _fetchingDetails__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../fetchingDetails */ \"./src/fetchingDetails.js\");\n/* harmony import */ var _updateWeatherDisplay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./updateWeatherDisplay */ \"./src/events/updateWeatherDisplay.js\");\n\r\n\r\n\r\nconst grabWeatherInfoOnSubmit = () => {\r\n    const locInputForm = document.getElementById('location_input_form');\r\n\r\n    //event listeners can take async functions too\r\n    locInputForm.addEventListener('submit', async (e) => {\r\n        e.preventDefault();\r\n        const formVals = new FormData(locInputForm);\r\n        const returnedWeatherJosn = await (0,_fetchingDetails__WEBPACK_IMPORTED_MODULE_0__.getWeather)(formVals.get('location_input'));\r\n        (0,_updateWeatherDisplay__WEBPACK_IMPORTED_MODULE_1__.updateWeatherDisplayElems)(returnedWeatherJosn);\r\n        ;\r\n    })\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/events/locationSubmit.js?");
+
+/***/ }),
+
+/***/ "./src/events/updateWeatherDisplay.js":
+/*!********************************************!*\
+  !*** ./src/events/updateWeatherDisplay.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   updateWeatherDisplayElems: () => (/* binding */ updateWeatherDisplayElems)\n/* harmony export */ });\n//when weather is found\r\nconst updateWeatherLocation = (weatherJsonVal) => {\r\n    const weatherLocElem = document.getElementById('weather_location');\r\n    weatherLocElem.innerText = weatherJsonVal;\r\n}\r\n\r\nconst updateWeatherImg = (weatherJsonVal) => {\r\n    const weatherImageElem = document.getElementById('weather_img');\r\n    weatherImageElem.src = 'https:'+ weatherJsonVal;\r\n}\r\n\r\nconst updateWeatherDesc = (weatherJsonVal) => {\r\n    const weatherDescElem = document.getElementById('weather_desc');\r\n    weatherDescElem.innerText = \"Current Condition: \" + weatherJsonVal;\r\n}\r\n\r\nconst updateWeatherTemps = (weatherJsonVal1, weatherJsonVal2) => {\r\n    const weatherTempElem = document.getElementById('weather_temp');\r\n    weatherTempElem.innerText = \"Current Temperature (F): \" + weatherJsonVal1;\r\n\r\n    const weatherRFTempElem = document.getElementById('weather_rftemp');\r\n    weatherRFTempElem.innerText = \"Current Real Feel (F): \" + weatherJsonVal2;\r\n}\r\n\r\nconst updateWeatherFound = (weatherJson) => {\r\n    updateWeatherLocation(weatherJson.locationDetail);\r\n    updateWeatherImg(weatherJson.weatherImg);\r\n    updateWeatherDesc(weatherJson.weatherDesc);\r\n    updateWeatherTemps(weatherJson.weatherTemp, weatherJson.weatherRFTemp);\r\n}\r\n\r\nconst updateWeatherNotFound = (weatherJson) => {\r\n    const errorText = 'No Data';\r\n\r\n    updateWeatherLocation(weatherJson.errorMsg);\r\n\r\n    const weatherImageElem = document.getElementById('weather_img');\r\n    //add a no images found image here\r\n\r\n    updateWeatherDesc(errorText);\r\n    updateWeatherTemps(errorText, errorText);\r\n}\r\n\r\nconst updateWeatherDisplayElems = (weatherJson) => {\r\n    if (!('errorMsg' in weatherJson)){  //no error\r\n        updateWeatherFound(weatherJson);\r\n        console.log(\"updating weather display with\", weatherJson)\r\n    } else {                            //error\r\n        updateWeatherNotFound(weatherJson);\r\n        console.log(\"updating with error\", weatherJson)\r\n    }\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/events/updateWeatherDisplay.js?");
+
+/***/ }),
+
+/***/ "./src/fetchingDetails.js":
+/*!********************************!*\
+  !*** ./src/fetchingDetails.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getWeather: () => (/* binding */ getWeather)\n/* harmony export */ });\nconst API_KEY = \"7f9698739cfc45e193110617232610\";\r\n\r\nconsole.log(\"Hello\", \"7f9698739cfc45e193110617232610\");\r\n\r\nasync function getWeather(userInputLocation) {\r\n    const response  = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${userInputLocation}`, {mode: 'cors'})\r\n    const weatherData = await response.json();\r\n    console.log(weatherData);\r\n    \r\n    //set to return a text, img, temp (f), and real feel (f)\r\n    if (!('error' in weatherData)) {\r\n        const compactWeatherVals = {\r\n            locationDetail: `${weatherData.location.name}, ${weatherData.location.region}, ${weatherData.location.country}`,\r\n            weatherDesc: weatherData.current.condition.text,\r\n            weatherImg: weatherData.current.condition.icon,\r\n            weatherTemp: weatherData.current.temp_f,\r\n            weatherRFTemp: weatherData.current.feelslike_f\r\n        }\r\n        console.log(compactWeatherVals)\r\n        return compactWeatherVals;\r\n    } else {\r\n        const errorObj = {\r\n            errorMsg: weatherData.error.message\r\n        }\r\n        console.log(errorObj, \"this is error obj\")\r\n        return errorObj;\r\n    }\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/fetchingDetails.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n\r\nconsole.log('hello, world');\n\n//# sourceURL=webpack://weather_app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _pageSection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pageSection */ \"./src/pageSection.js\");\n/* harmony import */ var _events_locationSubmit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./events/locationSubmit */ \"./src/events/locationSubmit.js\");\n\r\n\r\n\r\n\r\nconsole.log('hello, world');\r\n\r\n(0,_pageSection__WEBPACK_IMPORTED_MODULE_1__.locationInputSection)();\r\n(0,_pageSection__WEBPACK_IMPORTED_MODULE_1__.displayWeatherSection)();\r\n\r\n(0,_events_locationSubmit__WEBPACK_IMPORTED_MODULE_2__.grabWeatherInfoOnSubmit)();\r\n\r\n// const API_KEY = process.env.WEATHER_APP_API_KEY;\r\n\r\n// console.log(\"Hello\", process.env.WEATHER_APP_API_KEY);\r\n// grabbing the api key works in index.js when loaded to browser; it prints in console\n\n//# sourceURL=webpack://weather_app/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/locationForm.js":
+/*!*****************************!*\
+  !*** ./src/locationForm.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   inputLocationForm: () => (/* binding */ inputLocationForm)\n/* harmony export */ });\nconst lineBreak = () => document.createElement('br');\r\n\r\nconst inputLocationForm = () => {\r\n    const inputForm = document.createElement('form');\r\n    inputForm.id = 'location_input_form';\r\n\r\n    const locationInput = document.createElement('input');\r\n    locationInput.id = 'location_input';\r\n    locationInput.name = 'location_input';\r\n    locationInput.placeholder = \"e.g London\";\r\n\r\n    const locationInputLabel = document.createElement('label');\r\n    locationInputLabel.setAttribute('for', 'location_Input');\r\n    locationInputLabel.innerText = \"Location: \";\r\n\r\n    const submitLocationInput = document.createElement('button');\r\n    submitLocationInput.type = 'submit';\r\n    submitLocationInput.innerText = \"Check\";\r\n\r\n    inputForm.append(\r\n        locationInputLabel,\r\n        locationInput,\r\n        lineBreak(),\r\n        submitLocationInput\r\n    )\r\n\r\n    return inputForm;\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/locationForm.js?");
+
+/***/ }),
+
+/***/ "./src/pageSection.js":
+/*!****************************!*\
+  !*** ./src/pageSection.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   displayWeatherSection: () => (/* binding */ displayWeatherSection),\n/* harmony export */   locationInputSection: () => (/* binding */ locationInputSection)\n/* harmony export */ });\n/* harmony import */ var _locationForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./locationForm */ \"./src/locationForm.js\");\n/* harmony import */ var _weatherDisplay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./weatherDisplay */ \"./src/weatherDisplay.js\");\n\r\n\r\n\r\nconst locationInputSection = () => {\r\n\r\n    const contentDiv = document.getElementById('content');\r\n\r\n    const locFormSection = document.createElement('div');\r\n    locFormSection.id = 'loc_form_section';\r\n    locFormSection.append((0,_locationForm__WEBPACK_IMPORTED_MODULE_0__.inputLocationForm)());\r\n\r\n    contentDiv.append(locFormSection);\r\n}\r\n\r\nconst displayWeatherSection = () => {\r\n    const contentDiv = document.getElementById('content');\r\n\r\n    const weatherDisplaySection = document.createElement('div');\r\n    weatherDisplaySection.id = 'weather_display_section';\r\n    weatherDisplaySection.append((0,_weatherDisplay__WEBPACK_IMPORTED_MODULE_1__.weatherDisplay)());\r\n    \r\n    contentDiv.append(weatherDisplaySection);\r\n}\r\n\n\n//# sourceURL=webpack://weather_app/./src/pageSection.js?");
+
+/***/ }),
+
+/***/ "./src/weatherDisplay.js":
+/*!*******************************!*\
+  !*** ./src/weatherDisplay.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   weatherDisplay: () => (/* binding */ weatherDisplay)\n/* harmony export */ });\nconst weatherDisplay = () => {\r\n    const section = document.createElement('div');\r\n\r\n    const weatherLocation = document.createElement('h2');\r\n    weatherLocation.id = \"weather_location\";\r\n\r\n    const weatherImage = document.createElement('img');\r\n    weatherImage.id = 'weather_img';\r\n    const weatherDesc = document.createElement('h2');\r\n    weatherDesc.id = 'weather_desc'\r\n\r\n    const weatherTemp = document.createElement('h2');\r\n    weatherTemp.id = 'weather_temp';\r\n\r\n    const weatherRealFeelTempt = document.createElement('h2');\r\n    weatherRealFeelTempt.id = 'weather_rftemp';\r\n\r\n    section.append(\r\n        weatherLocation,\r\n        weatherImage,\r\n        weatherDesc,\r\n        weatherTemp,\r\n        weatherRealFeelTempt\r\n    );\r\n    \r\n    return section;\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/weatherDisplay.js?");
 
 /***/ })
 
