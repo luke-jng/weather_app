@@ -1,3 +1,10 @@
 body {
     background-color: blue;
 }
+
+#loc_form_section {
+    background-color: white;
+}
+#weather_display_section {
+    background-color: white;
+}

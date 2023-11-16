@@ -7,6 +7,15 @@ const updateWeatherLocation = (weatherJsonVal) => {
 const updateWeatherImg = (weatherJsonVal) => {
     const weatherImageElem = document.getElementById('weather_img');
     weatherImageElem.src = 'https:'+ weatherJsonVal;
+    weatherImageElem.style.height = "100px";
+    weatherImageElem.style.width = "100px";
+}
+
+const clearWeatherImg = () => {
+    const weatherImageElem = document.getElementById('weather_img');
+    weatherImageElem.src = "";
+    weatherImageElem.style.height = "";
+    weatherImageElem.style.width = "";
 }
 
 const updateWeatherDesc = (weatherJsonVal) => {
@@ -34,7 +43,7 @@ const updateWeatherNotFound = (weatherJson) => {
 
     updateWeatherLocation(weatherJson.errorMsg);
 
-    const weatherImageElem = document.getElementById('weather_img');
+    clearWeatherImg();
     //add a no images found image here
 
     updateWeatherDesc(errorText);
@@ -51,4 +60,10 @@ const updateWeatherDisplayElems = (weatherJson) => {
     }
 }
 
-export { updateWeatherDisplayElems }
+const setLoadingWeatherDisplayElem = () => {
+    updateWeatherLocation("Searching for inputted location...");
+    clearWeatherImg();
+    updateWeatherDesc("Searching data...");
+    updateWeatherTemps("Searching data...", "Searching data...");
+}
+export { updateWeatherDisplayElems, setLoadingWeatherDisplayElem }
