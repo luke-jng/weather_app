@@ -1,11 +1,11 @@
 body {
-    background-image: url("../images/billy-huynh-v9bnfMCyKbg-unsplash.jpg");
+    background-image: url("../images/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg");
     background-size: cover;
     align-content: center;
 }
 
 #loc_form_section {
-    background-color: white;
+    background-color: rgba(63, 93, 143, 0.6);
     text-align: center;
     width: fit-content;
     margin-left: auto;
@@ -16,16 +16,18 @@ body {
 }
 
 #weather_display_section {
-    background-color: white;
+    background-color:rgba(63, 93, 143, 0.7);
 
-    width: 50%;
+    width: 40%;
     margin-top: 10vh; 
 
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
 
-    border-radius: 5px;
+    border-radius: 15px;
+
+    color: white;
 }
 /*This centers the contents within the weather display section*/
 #weather_display_contents {
@@ -34,6 +36,10 @@ body {
     height: fit-content;
 
     margin: auto;
+}
+
+#weather_location {
+   text-align: center;
 }
 
 /*This centers the weather image and content details*/ 

@@ -1,6 +1,6 @@
 import { getWeather } from './fetchingDetails'
 import { setLoadingWeatherDisplayElem, updateWeatherDisplayElems } from './updateWeatherDisplay'
-
+//
 const grabWeatherInfoOnSubmit = () => {
     const locInputForm = document.getElementById('location_input_form');
 
