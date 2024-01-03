@@ -1,7 +1,5 @@
 const API_KEY = process.env.WEATHER_APP_API_KEY;
 
-console.log("Hello", process.env.WEATHER_APP_API_KEY);
-
 async function getWeather(userInputLocation) {
     const response  = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${userInputLocation}`, {mode: 'cors'})
     const weatherData = await response.json();

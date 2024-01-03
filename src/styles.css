@@ -1,10 +1,51 @@
 body {
-    background-color: blue;
+    background-image: url("./images/billy-huynh-v9bnfMCyKbg-unsplash.jpg");
+    background-size: cover;
+    align-content: center;
 }
 
 #loc_form_section {
     background-color: white;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+
+    border-radius: 5px;
 }
+
 #weather_display_section {
     background-color: white;
+
+    width: 50%;
+    margin-top: 10vh; 
+
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+
+    border-radius: 5px;
+}
+/*This centers the contents within the weather display section*/
+#weather_display_contents {
+    /* display: block;  */
+    width: fit-content;
+    height: fit-content;
+
+    margin: auto;
+}
+
+/*This centers the weather image and content details*/ 
+#weather_display_content_details{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#weather_img {
+    display: block; /*Used to center img*/
+
+    margin-left: auto;
+    margin-right: auto;
 }

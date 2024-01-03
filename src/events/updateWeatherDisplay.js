@@ -1,4 +1,6 @@
-//when weather is found
+const fahrenheitEntity = '&deg;F';
+const celciusEntity = '&deg;C';
+
 const updateWeatherLocation = (weatherJsonVal) => {
     const weatherLocElem = document.getElementById('weather_location');
     weatherLocElem.innerText = weatherJsonVal;
@@ -23,19 +25,19 @@ const updateWeatherDesc = (weatherJsonVal) => {
     weatherDescElem.innerText = "Current Condition: " + weatherJsonVal;
 }
 
-const updateWeatherTemps = (weatherJsonVal1, weatherJsonVal2) => {
+const updateWeatherTemps = (weatherJsonVal1, weatherJsonVal2, tempDegree) => {
     const weatherTempElem = document.getElementById('weather_temp');
-    weatherTempElem.innerText = "Current Temperature (F): " + weatherJsonVal1;
+    weatherTempElem.innerHTML = "Current Temperature: " + weatherJsonVal1 + ` ${tempDegree}`;
 
     const weatherRFTempElem = document.getElementById('weather_rftemp');
-    weatherRFTempElem.innerText = "Current Real Feel (F): " + weatherJsonVal2;
+    weatherRFTempElem.innerHTML = "Current Real Feel: " + weatherJsonVal2 + ` ${tempDegree}`;
 }
 
 const updateWeatherFound = (weatherJson) => {
     updateWeatherLocation(weatherJson.locationDetail);
     updateWeatherImg(weatherJson.weatherImg);
     updateWeatherDesc(weatherJson.weatherDesc);
-    updateWeatherTemps(weatherJson.weatherTemp, weatherJson.weatherRFTemp);
+    updateWeatherTemps(weatherJson.weatherTemp, weatherJson.weatherRFTemp, fahrenheitEntity);
 }
 
 const updateWeatherNotFound = (weatherJson) => {
@@ -47,7 +49,7 @@ const updateWeatherNotFound = (weatherJson) => {
     //add a no images found image here
 
     updateWeatherDesc(errorText);
-    updateWeatherTemps(errorText, errorText);
+    updateWeatherTemps(errorText, errorText, "");
 }
 
 const updateWeatherDisplayElems = (weatherJson) => {
@@ -64,6 +66,6 @@ const setLoadingWeatherDisplayElem = () => {
     updateWeatherLocation("Searching for inputted location...");
     clearWeatherImg();
     updateWeatherDesc("Searching data...");
-    updateWeatherTemps("Searching data...", "Searching data...");
+    updateWeatherTemps("Searching data...", "Searching data...", "");
 }
 export { updateWeatherDisplayElems, setLoadingWeatherDisplayElem }
