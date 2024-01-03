@@ -1,23 +1,23 @@
 import { inputLocationForm } from "./locationForm";
 import { weatherDisplay } from "./weatherDisplay";
 
-const headSection = () => {
-    const contentDiv = document.getElementById('content');
+// const headSection = () => {
+//     const contentDiv = document.getElementById('content');
 
-    const headSectionContainer = document.createElement('div');
-    headSectionContainer.id = 'head_section';
+//     const headSectionContainer = document.createElement('div');
+//     headSectionContainer.id = 'head_section';
 
-    const appNameElem = document.createElement('h1');
-    appNameElem.id = 'app_name';
-    appNameElem.innerText = 'Weather App';
+//     const appNameElem = document.createElement('h1');
+//     appNameElem.id = 'app_name';
+//     appNameElem.innerText = 'Weather App';
 
-    const appDescElem = document.createElement('h3');
-    appDescElem.id = 'app_name_desc';
-    appDescElem.innerText = 'Search up weather of a location of your interest!'
+//     const appDescElem = document.createElement('h3');
+//     appDescElem.id = 'app_name_desc';
+//     appDescElem.innerText = 'Search up weather of a location of your interest!'
 
-    headSectionContainer.append(appNameElem, appDescElem);
-    contentDiv.append(headSectionContainer);
-}
+//     headSectionContainer.append(appNameElem, appDescElem);
+//     contentDiv.append(headSectionContainer);
+// }
 
 const locationInputSection = () => {
 
@@ -45,4 +45,4 @@ const footerSection = () => {
 
     const footerSectionContainer = document.createElement('div');
 }
-export { headSection, locationInputSection, displayWeatherSection }
+export {locationInputSection, displayWeatherSection }

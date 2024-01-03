@@ -8,12 +8,6 @@ const weatherDisplay = () => {
 
     const weatherImage = document.createElement('img');
     weatherImage.id = "weather_img";
-    // let imgPath = "../src/images/weatherIcons/svgs/sunny.svg"
-    // weatherImage.src = imgPath;
-    // weatherImage.alt = "sunny_svg";
-    // weatherImage.style.height = "500px";
-    // weatherImage.style.width = "500px";
-    // weatherImage.style.color = "white";
 
     const weatherDetails = document.createElement('div');
     weatherDetails.id = "weather_display_content_details";

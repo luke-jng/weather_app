@@ -1,18 +1,43 @@
 body {
     background-image: url("../images/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg");
     background-size: cover;
+    resize: both;
+    overflow: scroll;
     align-content: center;
+    font-family: sans-serif;
 }
 
 #loc_form_section {
     background-color: rgba(63, 93, 143, 0.6);
     text-align: center;
     width: fit-content;
+    margin-top: 35px;
     margin-left: auto;
     margin-right: auto;
     padding: 15px;
 
     border-radius: 5px;
+}
+
+#location_input_form {
+    display: flex;
+    align-items: center;
+}
+#location_input{
+    padding: 5px;
+}
+#location_input_label {
+    /* padding-top: 2px; */
+    margin-right: 5px;
+}
+#submit_location_button {
+    margin-left: 5px; 
+    background-color:rgba(111, 228, 88, 0.45);
+    border: none;
+    border-radius: 5px;
+}
+#submit_location_button:hover {
+    background-color: rgba(179, 255, 88, 0.5);
 }
 
 #weather_display_section {

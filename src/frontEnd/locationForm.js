@@ -10,17 +10,31 @@ const inputLocationForm = () => {
     locationInput.placeholder = "e.g London";
 
     const locationInputLabel = document.createElement('label');
+    locationInputLabel.id = "location_input_label";
     locationInputLabel.setAttribute('for', 'location_Input');
-    locationInputLabel.innerText = "Location: ";
+
+    const locationSVG = document.createElement('img');
+    locationSVG.src = "../src/images/svgicons/location_on_FILL0_wght400_GRAD0_opsz24.svg"
+    locationSVG.alt = "location_icon";
+    locationSVG.style.height = '25px';
+    locationSVG.style.width = '25px';
+
+    locationInputLabel.append(locationSVG);
 
     const submitLocationInput = document.createElement('button');
+    submitLocationInput.id = 'submit_location_button';
     submitLocationInput.type = 'submit';
-    submitLocationInput.innerText = "Check";
+
+    const submitSVG = document.createElement('img');
+    submitSVG.src = "../src/images/svgicons/search_FILL0_wght400_GRAD0_opsz24.svg"
+    submitSVG.style.height = '25px';
+    submitSVG.style.width = '25px';
+
+    submitLocationInput.append(submitSVG);
 
     inputForm.append(
         locationInputLabel,
         locationInput,
-        lineBreak(),
         submitLocationInput
     )
 
