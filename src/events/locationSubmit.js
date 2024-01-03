@@ -1,4 +1,4 @@
-import { getWeather } from '../fetchingDetails'
+import { getWeather } from './fetchingDetails'
 import { setLoadingWeatherDisplayElem, updateWeatherDisplayElems } from './updateWeatherDisplay'
 
 const grabWeatherInfoOnSubmit = () => {

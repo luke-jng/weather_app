@@ -1,5 +1,5 @@
-import './styles.css'
-import { locationInputSection, displayWeatherSection, headSection } from './pageSection';
+import './frontEnd/styles.css'
+import { locationInputSection, displayWeatherSection, headSection } from './frontEnd/pageSection';
 import { grabWeatherInfoOnSubmit } from './events/locationSubmit';
 
 console.log('hello, world');
