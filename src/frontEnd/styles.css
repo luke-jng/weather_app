@@ -1,11 +1,22 @@
 body {
     background-image: url("../images/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg");
     background-size: cover;
-    resize: both;
-    overflow: scroll;
+    background-position: center;
+    background-attachment: fixed;
+    /* background: linear-gradient(to bottom right, rgb(116, 171, 255), rgb(16, 220, 16)); */
+    height: 100vh;
+    /* resize: both;
+    overflow: scroll; */
     align-content: center;
     font-family: sans-serif;
 }
+/* @media screen and (max-width: 800px){
+    body {
+        background-image: url("../images/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg");
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
+} */
 
 #loc_form_section {
     background-color: rgba(63, 93, 143, 0.6);
@@ -25,6 +36,7 @@ body {
 }
 #location_input{
     padding: 5px;
+    border: none;
 }
 #location_input_label {
     /* padding-top: 2px; */
@@ -53,6 +65,18 @@ body {
     border-radius: 15px;
 
     color: white;
+}
+@media screen and (max-width: 800px){
+    #weather_display_section {
+        width: 60%;
+        font-size: small;
+    }
+}
+@media screen and (max-width: 450px){
+    #weather_display_section {
+        width: 70%;
+        font-size: smaller;
+    }
 }
 /*This centers the contents within the weather display section*/
 #weather_display_contents {
