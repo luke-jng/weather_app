@@ -43,6 +43,35 @@ const displayWeatherSection = () => {
 const footerSection = () => {
     const contentDiv = document.getElementById('content');
 
-    const footerSectionContainer = document.createElement('div');
+    const footerSectionContainer = document.createElement('footer');
+    footerSectionContainer.id = "footer_section";
+
+    const footerCols = document.createElement('div');
+    footerCols.id = "footer_row";
+
+    const footerCol1 = document.createElement('div');
+    footerCol1.id = 'footer_title_desc_col';
+    const appTitle = document.createElement('h3');
+    appTitle.id = 'footer_appTitle';
+    appTitle.innerText = 'Weather App'
+    const appDesc = document.createElement('p');
+    appDesc.id = 'footer_appDesc';
+    appDesc.innerHTML = 'A simple weather application to tell the current weather of a entered location. Based on The Odin Project&#39;s <a href="https://www.theodinproject.com/lessons/node-path-javascript-weather-app">Weather App</a> Project.'
+    footerCol1.append(
+        appTitle,
+        appDesc
+    );
+
+    const footerCol2 = document.createElement('div');
+    footerCol2.id = 'footer_links_col';
+    const gitHubButton = document.createElement('button');
+    gitHubButton.id = 'footer_github_link_button';
+    gitHubButton.innerText = 'My GitHub';
+    footerCol2.append(gitHubButton);
+
+    footerCols.append(footerCol1, footerCol2);
+
+    footerSectionContainer.append(footerCols);
+    contentDiv.append(footerSectionContainer);
 }
-export {locationInputSection, displayWeatherSection }
+export {locationInputSection, displayWeatherSection, footerSection }
