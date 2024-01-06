@@ -105,6 +105,8 @@ body {
     width: 100vw;
     position: fixed;
     bottom: 0;
+
+    padding-bottom: 15px;
 }
 @media screen and (max-height:915px) {
     #footer_section {
@@ -130,6 +132,37 @@ body {
     color: white;
 }
 
+#footer_appTitle{
+    margin-bottom: 0px;
+}
+
 #footer_links_col {
     margin-top: 18.72px;
+    align-items: center;
+}
+
+#footer_github_link_button {
+    background-color: rgba(111, 228, 88, 0.45);
+    color: white;
+    width: fit-content;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border: none;
+    border-radius: 5px;
+}
+
+#footer_github_link_button:hover {
+    background-color: rgba(179, 255, 88, 0.5);
+}
+
+#github_link {
+    color: white;
+    text-decoration: none;
+}
+
+#odin_link{
+    color:rgba(111, 228, 88, 0.45);
 }

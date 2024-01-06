@@ -56,7 +56,7 @@ const footerSection = () => {
     appTitle.innerText = 'Weather App'
     const appDesc = document.createElement('p');
     appDesc.id = 'footer_appDesc';
-    appDesc.innerHTML = 'A simple weather application to tell the current weather of a entered location. Based on The Odin Project&#39;s <a href="https://www.theodinproject.com/lessons/node-path-javascript-weather-app">Weather App</a> Project.'
+    appDesc.innerHTML = 'A simple weather application to tell the current weather of a entered location. Based on The Odin Project&#39;s <a id="odin_link" href="https://www.theodinproject.com/lessons/node-path-javascript-weather-app">Weather App</a> Project.'
     footerCol1.append(
         appTitle,
         appDesc
@@ -66,8 +66,9 @@ const footerSection = () => {
     footerCol2.id = 'footer_links_col';
     const gitHubButton = document.createElement('button');
     gitHubButton.id = 'footer_github_link_button';
-    gitHubButton.innerText = 'My GitHub';
+    gitHubButton.innerHTML = '<a id="github_link">My GitHub</a>';
     footerCol2.append(gitHubButton);
+
 
     footerCols.append(footerCol1, footerCol2);
 
