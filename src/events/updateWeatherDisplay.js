@@ -85,8 +85,12 @@ const updateWeatherFound = (weatherJson) => {
 
 const updateWeatherNotFound = (weatherJson) => {
     const errorText = 'No Data';
-
-    updateWeatherLocation(`${weatherJson.errorMsg} Please try again.`); // Given error message Wwill show no matching data.
+    if (weatherJson.errorMsg == "Parameter q is missing.") {
+        updateWeatherLocation('The inputted location is not accepted. Please try again.');
+    } else {
+        updateWeatherLocation(`${weatherJson.errorMsg} Please try again.`); // Given error message Wwill show no matching data.
+    }
+    
 
     clearWeatherImg();
     //add a no images found image here
