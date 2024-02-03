@@ -14,7 +14,7 @@ const inputLocationForm = () => {
     locationInputLabel.setAttribute('for', 'location_Input');
 
     const locationSVG = document.createElement('img');
-    locationSVG.src = "../src/images/svgicons/location_on_FILL0_wght400_GRAD0_opsz24.svg"
+    locationSVG.src = "https://github.com/luke-jng/weather_app/blob/main/src/images/svgicons/location_on_FILL0_wght400_GRAD0_opsz24.svg"
     locationSVG.alt = "location_icon";
     locationSVG.style.height = '25px';
     locationSVG.style.width = '25px';
@@ -26,7 +26,7 @@ const inputLocationForm = () => {
     submitLocationInput.type = 'submit';
 
     const submitSVG = document.createElement('img');
-    submitSVG.src = "../src/images/svgicons/search_FILL0_wght400_GRAD0_opsz24.svg"
+    submitSVG.src = "https://github.com/luke-jng/weather_app/blob/main/src/images/svgicons/search_FILL0_wght400_GRAD0_opsz24.svg"
     submitSVG.style.height = '25px';
     submitSVG.style.width = '25px';
 
