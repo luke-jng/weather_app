@@ -14,7 +14,7 @@ const inputLocationForm = () => {
     locationInputLabel.setAttribute('for', 'location_Input');
 
     const locationSVG = document.createElement('img');
-    locationSVG.src = "weather_app/src/images/svgicons/location_icon.svg"
+    locationSVG.src = "src/images/svgicons/location_icon.svg"
     locationSVG.alt = "location_icon";
     locationSVG.style.height = '25px';
     locationSVG.style.width = '25px';
@@ -26,7 +26,7 @@ const inputLocationForm = () => {
     submitLocationInput.type = 'submit';
 
     const submitSVG = document.createElement('img');
-    submitSVG.src = "weather_app/src/images/svgicons/search_icon.svg"
+    submitSVG.src = "src/images/svgicons/search_icon.svg"
     submitSVG.style.height = '25px';
     submitSVG.style.width = '25px';
 
