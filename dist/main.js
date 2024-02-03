@@ -136,7 +136,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   githubButtonClick: () => (/* binding */ githubButtonClick)\n/* harmony export */ });\nconst githubButtonClick = () => {\r\n    const gitLinkButton = document.getElementById('footer_github_link_button');\r\n\r\n    gitLinkButton.addEventListener('click', () => {\r\n        window.location.href= 'https://github.com/';\r\n    })\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/events/githubClick.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   githubButtonClick: () => (/* binding */ githubButtonClick)\n/* harmony export */ });\nconst githubButtonClick = () => {\r\n    const gitLinkButton = document.getElementById('footer_github_link_button');\r\n\r\n    gitLinkButton.addEventListener('click', () => {\r\n        window.location.href= 'https://github.com/luke-jng/weather_app';\r\n    })\r\n}\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/events/githubClick.js?");
 
 /***/ }),
 
