@@ -50,6 +50,26 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
 
 /***/ }),
 
+/***/ "./src/images/svgicons/location_icon.svg":
+/*!***********************************************!*\
+  !*** ./src/images/svgicons/location_icon.svg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"eff93986c6523e3c91d35f8328eba623.svg\");\n\n//# sourceURL=webpack://weather_app/./src/images/svgicons/location_icon.svg?");
+
+/***/ }),
+
+/***/ "./src/images/svgicons/search_icon.svg":
+/*!*********************************************!*\
+  !*** ./src/images/svgicons/search_icon.svg ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"ed88628ea110e40ea148d83a0a5c359c.svg\");\n\n//# sourceURL=webpack://weather_app/./src/images/svgicons/search_icon.svg?");
+
+/***/ }),
+
 /***/ "./src/frontEnd/styles.css":
 /*!*********************************!*\
   !*** ./src/frontEnd/styles.css ***!
@@ -166,7 +186,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   inputLocationForm: () => (/* binding */ inputLocationForm)\n/* harmony export */ });\nconst lineBreak = () => document.createElement('br');\r\n\r\nconst inputLocationForm = () => {\r\n    const inputForm = document.createElement('form');\r\n    inputForm.id = 'location_input_form';\r\n\r\n    const locationInput = document.createElement('input');\r\n    locationInput.id = 'location_input';\r\n    locationInput.name = 'location_input';\r\n    locationInput.placeholder = \"e.g London\";\r\n\r\n    const locationInputLabel = document.createElement('label');\r\n    locationInputLabel.id = \"location_input_label\";\r\n    locationInputLabel.setAttribute('for', 'location_Input');\r\n\r\n    const locationSVG = document.createElement('img');\r\n    locationSVG.src = \"./weather_app/src/images/svgicons/location_icon.svg\"\r\n    locationSVG.alt = \"location_icon\";\r\n    locationSVG.style.height = '25px';\r\n    locationSVG.style.width = '25px';\r\n\r\n    locationInputLabel.append(locationSVG);\r\n\r\n    const submitLocationInput = document.createElement('button');\r\n    submitLocationInput.id = 'submit_location_button';\r\n    submitLocationInput.type = 'submit';\r\n\r\n    const submitSVG = document.createElement('img');\r\n    submitSVG.src = \"./weather_app/src/images/svgicons/search_icon.svg\"\r\n    submitSVG.style.height = '25px';\r\n    submitSVG.style.width = '25px';\r\n\r\n    submitLocationInput.append(submitSVG);\r\n\r\n    inputForm.append(\r\n        locationInputLabel,\r\n        locationInput,\r\n        submitLocationInput\r\n    )\r\n\r\n    return inputForm;\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/frontEnd/locationForm.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   inputLocationForm: () => (/* binding */ inputLocationForm)\n/* harmony export */ });\n/* harmony import */ var _images_svgicons_search_icon_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../images/svgicons/search_icon.svg */ \"./src/images/svgicons/search_icon.svg\");\n/* harmony import */ var _images_svgicons_location_icon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../images/svgicons/location_icon.svg */ \"./src/images/svgicons/location_icon.svg\");\n\r\n\r\n\r\nconst lineBreak = () => document.createElement('br');\r\n\r\nconst inputLocationForm = () => {\r\n    const inputForm = document.createElement('form');\r\n    inputForm.id = 'location_input_form';\r\n\r\n    const locationInput = document.createElement('input');\r\n    locationInput.id = 'location_input';\r\n    locationInput.name = 'location_input';\r\n    locationInput.placeholder = \"e.g London\";\r\n\r\n    const locationInputLabel = document.createElement('label');\r\n    locationInputLabel.id = \"location_input_label\";\r\n    locationInputLabel.setAttribute('for', 'location_Input');\r\n\r\n    const locationSVG = document.createElement('img');\r\n    locationSVG.src = `${_images_svgicons_location_icon_svg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]}`;\r\n    locationSVG.alt = \"location_icon\";\r\n    locationSVG.style.height = '25px';\r\n    locationSVG.style.width = '25px';\r\n\r\n    locationInputLabel.append(locationSVG);\r\n\r\n    const submitLocationInput = document.createElement('button');\r\n    submitLocationInput.id = 'submit_location_button';\r\n    submitLocationInput.type = 'submit';\r\n\r\n    const submitSVG = document.createElement('img');\r\n    submitSVG.src = _images_svgicons_search_icon_svg__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\n    submitSVG.style.height = '25px';\r\n    submitSVG.style.width = '25px';\r\n\r\n    submitLocationInput.append(submitSVG);\r\n\r\n    inputForm.append(\r\n        locationInputLabel,\r\n        locationInput,\r\n        submitLocationInput\r\n    )\r\n\r\n    return inputForm;\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://weather_app/./src/frontEnd/locationForm.js?");
 
 /***/ }),
 

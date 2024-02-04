@@ -1,3 +1,6 @@
+import searchIcon from '../images/svgicons/search_icon.svg'
+import locationIcon from '../images/svgicons/location_icon.svg'
+
 const lineBreak = () => document.createElement('br');
 
 const inputLocationForm = () => {
@@ -14,7 +17,7 @@ const inputLocationForm = () => {
     locationInputLabel.setAttribute('for', 'location_Input');
 
     const locationSVG = document.createElement('img');
-    locationSVG.src = "./weather_app/src/images/svgicons/location_icon.svg"
+    locationSVG.src = `${locationIcon}`;
     locationSVG.alt = "location_icon";
     locationSVG.style.height = '25px';
     locationSVG.style.width = '25px';
@@ -26,7 +29,7 @@ const inputLocationForm = () => {
     submitLocationInput.type = 'submit';
 
     const submitSVG = document.createElement('img');
-    submitSVG.src = "./weather_app/src/images/svgicons/search_icon.svg"
+    submitSVG.src = searchIcon;
     submitSVG.style.height = '25px';
     submitSVG.style.width = '25px';
 
